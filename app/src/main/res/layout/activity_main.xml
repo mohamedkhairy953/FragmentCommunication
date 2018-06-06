@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragment"
-        android:name="com.example.mohsallam.fragmentcommunication.BlankFragment"
         android:layout_width="0dp"
         android:layout_height="198dp"
         android:layout_marginBottom="16dp"
@@ -20,9 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <fragment
+    <FrameLayout
         android:id="@+id/fragment2"
-        android:name="com.example.mohsallam.fragmentcommunication.PlusOneFragment"
         android:layout_width="0dp"
         android:layout_height="278dp"
         android:layout_marginEnd="16dp"

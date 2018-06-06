@@ -10,12 +10,15 @@ import android.widget.Button;
 
 import com.google.android.gms.plus.PlusOneButton;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * A fragment with a Google +1 button.
  */
 public class PlusOneFragment extends Fragment {
 
     TextClicked mCallback;
+    private int i;
 
     public interface TextClicked{
         public void sendText(String text);
@@ -31,15 +34,15 @@ public class PlusOneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_plus_one, container, false);
 
-        //Find the +1 button
+
         mPlusOneButton =  view.findViewById(R.id.plus_one_button);
         mPlusOneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                EventBus.getDefault().post(new MessageEvent(i++));
             }
         });
 
